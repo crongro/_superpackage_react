@@ -1,0 +1,15 @@
+.TitleWrap {
+
+}
+
+button.counterButton {
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
+    margin-right:10px;
+    font-size: 24px;
+}
+
+p.TitleDesc {
+	font-size: 1.2em;
+}
