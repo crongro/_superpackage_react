@@ -12,7 +12,7 @@ class ShowCard extends Component {
             }
 
     		return (
-    			 <div className="cardWrap">
+    			 <div className="cardUIWrap">
                     <ul className="cardList">
                         {aCardList}
                     </ul>
