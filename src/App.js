@@ -5,8 +5,7 @@ import { connect } from 'react-redux'
 import logo from './logo.svg';
 import './App.css';
 
-
-let App = ({ valuestate, onIncrement, onDecrement}) => {
+let App = ({ valuestate, onIncrement, onDecrement, onSendFetchData}) => {
     return (
       <div className="App">
         <div className="App-header">
@@ -22,13 +21,13 @@ let App = ({ valuestate, onIncrement, onDecrement}) => {
           value={valuestate.value} 
           onIncrement={onIncrement}
           onDecrement={onDecrement}
+          onSendFetchData={onSendFetchData}
           />
       </div>
     );
 }
 
 const mapStateToProps = (valuestate)  => {
-  console.log(valuestate);
   return {valuestate};
 };
 
@@ -39,6 +38,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     onIncrement() {
       dispatch(actions.addCount());
+    },
+    onSendFetchData() {
+      dispatch(actions.sendFetchData(dispatch));
     }
   }
 };

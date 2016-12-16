@@ -3,9 +3,16 @@ import ShowCard from './Components/ShowCard'
 import ShowCardNavi from './Components/ShowCardNavi.js'
 import './Counter.css'
 
+import 'whatwg-fetch'
+
 class Counter extends Component {
+
+	componentDidMount() {
+		this.props.onSendFetchData();
+	}
+
 	render() {
-    		const { value, onIncrement, onDecrement } = this.props
+			const { value, onIncrement, onDecrement } = this.props
     		return (
     			 <div>
     			 	<div className="TitleWrap">
