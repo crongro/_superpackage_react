@@ -1,4 +1,4 @@
-import React  from 'react';
+import React, { PropTypes }   from 'react';
 import Counter from './Counter'
 import * as actions from '../Actions/Action'
 import { connect } from 'react-redux'
@@ -33,6 +33,13 @@ const mapDispatchToProps = (dispatch) => {
     }
   }
 };
+
+App.propTypes = {
+  valuestate: PropTypes.object.isRequired,
+  onIncrement: PropTypes.func.isRequired,
+  onDecrement: PropTypes.func.isRequired,
+  onSendFetchData: PropTypes.func.isRequired,
+}
 
 App = connect(mapStateToProps, mapDispatchToProps)(App);
 

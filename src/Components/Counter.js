@@ -1,9 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import ShowCard from './ShowCard'
 import './Counter.css'
 import 'whatwg-fetch'
 
 class Counter extends Component {
+
+	static propTypes = {
+		value : PropTypes.number.isRequired,
+		onIncrement: PropTypes.func.isRequired
+	}
 
 	componentDidMount() {
 		this.props.onSendFetchData();

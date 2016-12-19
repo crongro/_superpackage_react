@@ -1,7 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import './ShowCard.css'
 
 class ShowCard extends Component {
+
+    static propTypes = {
+        cardCount : PropTypes.number.isRequired
+    }
+
 	render() {
     		const { cardCount } = this.props
 
