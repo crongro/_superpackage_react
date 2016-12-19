@@ -1,7 +1,7 @@
 import React from 'react'
 import { IndexLink } from 'react-router' 
-import NavLink from './NavLink'
-import logo from './logo.svg';
+import NavLink from './Components/NavLink'
+import logo from './imgs/logo.svg';
 import './App.css'
 
 export default React.createClass({
@@ -12,7 +12,7 @@ export default React.createClass({
         <div className="App">
           <div className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
-            <h2>CRA SuperSet</h2>
+            <h2>REACT Project SuperSet</h2>
           </div>
           <p className="App-intro"> hi React, Redux, CRA ;-[] </p>
         </div>

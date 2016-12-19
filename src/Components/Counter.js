@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ShowCard from './Components/ShowCard'
+import ShowCard from './ShowCard'
 import './Counter.css'
 import 'whatwg-fetch'
 

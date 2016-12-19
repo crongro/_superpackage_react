@@ -1,6 +1,6 @@
 import React  from 'react';
 import Counter from './Counter'
-import * as actions from './Action'
+import * as actions from '../Actions/Action'
 import { connect } from 'react-redux'
 
 let App = ({ valuestate, onIncrement, onDecrement, onSendFetchData}) => {
