@@ -2,6 +2,8 @@ import React, { Component, PropTypes } from 'react'
 import ShowCard from './ShowCard'
 import './Counter.css'
 import 'whatwg-fetch'
+//import { shallow, mount, render } from 'enzyme';
+import { shallow} from 'enzyme';
 
 class Counter extends Component {
 
