@@ -6,13 +6,14 @@ import ShowCard from './ShowCard'
 import sinon from 'sinon';
 
 
-function setup(value = 12) {
+function setup(value=12) {
   const actions = {
 	onIncrement: sinon.spy(),
-	onDecrement: sinon.spy()
+	onDecrement: sinon.spy(),
+	onSendFetchData: sinon.spy()
   }
   const component = shallow(
-    <Counter value={value} {...actions} />
+    <Counter valuestate ={{value:value}} {...actions} />
   )
 
   return {
