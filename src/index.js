@@ -6,7 +6,7 @@ import reducer from './Reducers/Counter.js'
 import { Provider } from 'react-redux'
 import { Router, Route, browserHistory, IndexRoute} from 'react-router'
 
-import App from './App'
+import App from './Container/App'
 import Home from './Components/Home'
 import Card from './Components/Card'
 import About from './Components/About'

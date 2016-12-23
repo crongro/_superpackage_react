@@ -1,8 +1,10 @@
+//MOVE TO Container
 import React, { PropTypes }   from 'react';
 import Counter from './Counter'
 import * as actions from '../Actions/Action'
 import { connect } from 'react-redux'
 
+//MOVE TO New child component
 let App = ({ valuestate, onIncrement, onDecrement, onSendFetchData}) => {
     return (
       <div>

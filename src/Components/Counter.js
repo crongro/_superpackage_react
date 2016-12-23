@@ -10,6 +10,7 @@ class Counter extends Component {
 		onIncrement: PropTypes.func.isRequired
 	}
 
+	//move to parent component
 	componentDidMount() {
 		this.props.onSendFetchData();
 	}
