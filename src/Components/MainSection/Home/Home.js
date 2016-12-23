@@ -1,5 +1,5 @@
 import React from 'react'
-import './Common.css'
+import '../../Common.css'
 
 const Home = () => (
 	<div className="simpleText">
