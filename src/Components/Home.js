@@ -1,12 +1,10 @@
 import React from 'react'
 import './Common.css'
 
-export default React.createClass({
-  render() {
-  	return(
-  		<div className="simpleText">
-  			Welcome Home :-)
-  		</div>
-  		)
-  }
-})
+const Home = () => (
+	<div className="simpleText">
+		Welcome ReactSuperSet :-)
+	</div>
+)
+
+export default Home;
