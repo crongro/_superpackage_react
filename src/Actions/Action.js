@@ -8,6 +8,16 @@ export const minusCount = () => ({
 	type : 'DECREMENT',
 })
 
+export const removeCardInStorage = (number) => ({
+	type : 'REMOVECARDINSTORAGE',
+	number : number
+})
+
+export const savemycard = (number) => ({
+	type : 'SAVEMYCARD',
+	cardnumber : number
+})
+
 export const getFetchData = (data) => ({
 	type : 'GETDATA',
 	value : data

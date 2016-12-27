@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
-import reducer from './Reducers/Counter'
+import reducer from './Reducers/index'
 import { Provider } from 'react-redux'
 import { Router, Route, browserHistory, IndexRoute} from 'react-router'
 

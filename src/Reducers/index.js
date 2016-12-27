@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import Counter from './Counter'
-import ServerData from './ServerData'
+import CardList from './CardList'
+import SaveMyCard from './SaveMyCard'
 
 export default combineReducers({
-  Counter,
-  ServerData
+  CardList,
+  SaveMyCard
 })

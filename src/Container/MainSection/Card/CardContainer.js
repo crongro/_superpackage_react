@@ -1,9 +1,9 @@
-import Counter from '../../../Components/MainSection/Card/Counter'
+import CardBoard from '../../../Components/MainSection/Card/CardBoard'
 import * as actions from '../../../Actions/Action'
 import { connect } from 'react-redux'
 
-const mapStateToProps = (valuestate)  => {
-  return {valuestate};
+const mapStateToProps = (props)  => {
+  return props;
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -14,6 +14,12 @@ const mapDispatchToProps = (dispatch) => {
     onIncrement() {
       dispatch(actions.addCount());
     },
+    onRemoveCardInStorage(number) {
+      dispatch(actions.removeCardInStorage(number));
+    },
+    onSaveMyCard(number) {
+      dispatch(actions.savemycard(number));
+    },
     onSendFetchData() {
       dispatch(actions.sendFetchData(dispatch));
     }
@@ -21,6 +27,6 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 
-const CardContainer = connect(mapStateToProps, mapDispatchToProps)(Counter);
+const CardContainer = connect(mapStateToProps, mapDispatchToProps)(CardBoard);
 
 export default CardContainer;
