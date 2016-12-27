@@ -1,9 +1,10 @@
 import React, { PropTypes } from 'react'
 import './ShowCard.css'
+import { withRouter } from 'react-router'
 
-const ShowCard = (props) => {
+const ShowCard = withRouter((props) => {
 
-    const { cardCount } = props;
+    const { cardCount, router } = props;
 
     let aCardList = [];
     for (var i = 0; i < cardCount; i++) {
@@ -11,15 +12,22 @@ const ShowCard = (props) => {
         aCardList.push(<li key={i}> {str} </li>)
     }
 
+    const goHome = () => {
+      router.push('/');
+    }
+
     return (
+      <div>
          <div className="cardUIWrap">
             <ul className="cardList">
                 {aCardList}
             </ul>
          </div>
+         <button onClick={goHome}>gohome!</button>
+         </div>
     ) 
 
-}
+})
 
 ShowCard.propTypes = {
   cardCount : PropTypes.number.isRequired
