@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import ShowCard from './ShowCard'
+import UselessCard from './UselessCard'
 import './Counter.css'
 import 'whatwg-fetch'
 
@@ -27,6 +28,7 @@ class Counter extends Component {
 		    			 <button className="counterButton" onClick={onDecrement}> - </button>
 	    			 </div>
 	    			 <ShowCard cardCount={valuestate.value} />
+	    			 <UselessCard />
     			 </div>
     		)
     	}
