@@ -5,6 +5,20 @@
     margin: 30px auto;
 }
 
+.useless-box li {
+    list-style: none;
+    width: 100px;
+    height: 100px;
+    background: #4e90a2;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    line-height: 100px;
+    font-size: 1.2em;
+    border-radius: 5px;
+}
+
 .gohome-btn{
 	width: 100px;
     margin: 30px auto;
