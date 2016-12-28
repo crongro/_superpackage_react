@@ -6,7 +6,7 @@ let SaveMyCard = (state=initialState, action) => {
 	switch (action.type) {
 
 		case 'SAVEMYCARD' :
-			return {...state, "saveCardList":[...state.saveCardList, +action.cardnumber]};
+			return {"saveCardList":[...state.saveCardList, +action.cardnumber]};
 
 		default :
 			return state

@@ -37,13 +37,13 @@ let CardList = (state=initialState, action) => {
 			return {...initialState, "cardList":_arr};
 
 		case 'INCREMENT' :
-			return {...state, "cardList":_addCardNumber(state.cardList) };
+			return {"cardList":_addCardNumber(state.cardList) };
 
 		case 'DECREMENT' :
-			return {...state, "cardList":_removeLastIndex(state.cardList) };
+			return {"cardList":_removeLastIndex(state.cardList) };
 
 		case 'REMOVECARDINSTORAGE' :
-			return {...state, "cardList":_removeIndex(state.cardList, action.number) };
+			return {"cardList":_removeIndex(state.cardList, action.number) };
 
 		default :
 			return state
