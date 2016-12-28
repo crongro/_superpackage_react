@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {PropTypes} from 'react'
 import { withRouter } from 'react-router'
 import './SaveCard.css'
 
@@ -40,5 +40,11 @@ const SaveCard = withRouter((props) => {
       </div>
     )
 })
+
+SaveCard.propTypes = {
+  onRemoveCardInStorage : PropTypes.func.isRequired,
+  onSaveMyCard: PropTypes.func.isRequired,
+  savecardlist: PropTypes.string.isRequired,
+}
 
 export default SaveCard
