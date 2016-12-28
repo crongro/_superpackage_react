@@ -2,7 +2,7 @@ import React from 'react'
 import { withRouter } from 'react-router'
 import './SaveCard.css'
 
-const UselessCard = withRouter((props) => {
+const SaveCard = withRouter((props) => {
 
     const { router, onRemoveCardInStorage, onSaveMyCard, savecardlist} = props;
 
@@ -34,11 +34,11 @@ const UselessCard = withRouter((props) => {
 
     return (
       <div>
-         <div onDragOver={onDragOver} onDrop={drop_handler} className="useless-box"></div>
-         <p> 현재 저장된 카드 {savecardlist}</p>
+         <div onDragOver={onDragOver} onDrop={drop_handler} className="savecard-box"></div>
+         <p> 현재 저장된 카드 번호들 : {savecardlist}</p>
          <button className="gohome-btn" onClick={goHome}>gohome!</button>
       </div>
     )
 })
 
-export default UselessCard
+export default SaveCard

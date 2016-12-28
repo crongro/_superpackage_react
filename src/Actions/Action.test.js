@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as actions from './Action';
-import reducer from '../Reducers/Counter.js' 
+import reducer from '../Reducers/index' 
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 
@@ -29,7 +29,7 @@ describe('todo actions', () => {
 	it('fetchdata should create fetch ajax request', () => {
 		return store.dispatch(actions.sendFetchData(store.dispatch))
 		.then( (res) => {
-			expect(store.getState().value).toBe(12);
+			expect(store.getState().CardList.cardList.length).toBe(12);
 		});
 	})
 
