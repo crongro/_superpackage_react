@@ -247,9 +247,9 @@ history정보를 browserHistory를 사용할때는 backend url요청을 다시 i
 그외에 anchor 태그 대신 Link정보를 주어서 페이지 이동을 하면서 history 관리를 할 수 있다.
 /Compoonents/MainNavi/MainNavi.jsx 소스를 참고하자.
 
-##### writeRouter 사용
-router를 하위의 컴포넌트 계층까지 전달해서 사용하고 싶을 경우가 있다. 이때는 writeRouter(react-router 모듈을 import해서 사용)를 사용해서 전달할 수가 있다.
-예를들어, CardBoard에서는 접근이 가능한 router 정보를 그 하위 컴포넌트인 SaveCard.jsx 에서 사용하고 싶을때는 SaveCard.jsx를 writeRouter로 아래처럼 감싸서 사용할 수가 있다. 
+##### withRouter 사용
+router를 하위의 컴포넌트 계층까지 전달해서 사용하고 싶을 경우가 있다. 이때는 withRouter(react-router 모듈을 import해서 사용)를 사용해서 전달할 수가 있다.
+예를들어, CardBoard에서는 접근이 가능한 router 정보를 그 하위 컴포넌트인 SaveCard.jsx 에서 사용하고 싶을때는 SaveCard.jsx를 withRouter아래처럼 감싸서 사용할 수가 있다. 
 
 ```javascript
 import { withRouter } from 'react-router'
@@ -548,8 +548,40 @@ Drag n drop API를 사용해서 특정 카드를 아래 영역(saveMyCard영역)
 이때에 기존 카드영역과 새로운영역의 데이터를 변경해야 하는데 역시 action->reducer의 흐름을 통해 동작한다.<br>
 DOM 구조를 자세히 알고 예제를 이해하는 것이 좋으니 React 개발자 도구를 통해서 살펴보면서 미리 예제의 컴포넌트 구조를 이해하는 것이 좋다.
 
+<br><br>
+
+#### 12. Login
+현재는 어떤 URL로 보내더라도 인증체크를 하게 되어 있고, login 컴포넌트로 url을 변경시킨다. <br>
+로그인을 서버와 통신 없이 간단히 한 후에는 어떠한 페이지에도 접근할 수 있다. <br>
+혹시 다시 로그인을 하려면 브라우저 탭을 종료하고 다시 접근해야 sessionStorage값이 삭제되서 다시 동작한다.(로그아웃이 구현되어 있지 않기때문에.. 아니면 크롬개발자도구의 Application-storage 항목에서 지워도 된다.)<br>
+좀더 동작을 알아보자.<br>
+Login 유무는 인증이 됐는지를 확인하는 state 값을 통해서 확인한다.<br>
+인증이 안되어 있다면 로그인 페이지로 이동한다.<br>
+로그인이 성공적으로 이뤄지면 sessionStorage에 값을 저장하고, state값을 적절히 할당한다 (authenticated 값추가)
+아래 두 가지 다이어그램으로 이해를 도울 수 있다.<br>
+현재 로그인은 실제서버를 통해서 받은 것은 아니고, action 부분에서 간단하게 인증절차를 간소화해서 표현했다.<br>
+실제로는 서버에서 토큰을만들어서 받아서 sessionStorage에 저장하는 것이 일반적인 절차로 볼 수 있다.
+[login 인증과정](https://docs.google.com/presentation/d/1fi6_R9TDpCHwx6HH7S9-pXPbNnGRsKHx9XD36uWLLcA/edit#slide=id.p)
+<br>
+별도 로그아웃은 생략했으며, 로그아웃페이지에서는 실제 token을 삭제하고 역시 action->reducer 과정을 거치면서 authenticated 값을 설정하면서 컴포넌트에서 재렌더링이 되도록 하면 된다.  
 
 <br><br>
+
+#### 13. Ajax error
+Ajax로 인증받은 데이터에 문제가 있는경우 특정 URL로 보내주는 작업을 통해, 에러메시지를 노출할 수 있다.<br>
+자세한 코드는 아래 flow 를 참고해서 해당 소스코드를 보면서 이해하자.<br>
+Ajax 코드의 오류는 fetch API를 사용하는 것으로 Promise 방식에서 오류를 잡아서 처리해야 한다. <br>
+오류의 발생도 역시 action -> reducer 를 거쳐서 진행하게 된다.<br>
+특정 페이지 이동이 필요한 경우 index.js에 설정된 특정 오류전용 안내페이지로 router객체를 활용해 push를 통해서 처리할 수 있다. 
+<br>
+[Ajax Error처리](https://docs.google.com/presentation/d/1nHxvTgtoNu-yxa1XQr9BK-4VaSc76RaluRj_D4hUNjA/edit?usp=sharing)
+
+<br><br>
+
+#### 14. 잘못된 URL 접근 
+Router 에서 '*' 로 패턴을 표시함으로써 잘못된 URL요청에 대해서 에러를 표시할 수 있음.
+<br>
+'/index.js' 코드 참고 
 
 --- 
 

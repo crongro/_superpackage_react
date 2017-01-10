@@ -1,5 +1,6 @@
 const initialState = {
- 	cardList : []
+ 	cardList : [],
+ 	errMsg : null
 }
 
 let _getCardNumberList = (count) => {
@@ -36,14 +37,18 @@ let CardList = (state=initialState, action) => {
 			let _arr = _getCardNumberList(_temp);
 			return {...initialState, "cardList":_arr};
 
+		case 'GETWRONGDATA' : 
+			let errMsg = action.value;
+			return {...initialState, "errMsg": errMsg};
+
 		case 'INCREMENT' :
-			return {"cardList":_addCardNumber(state.cardList) };
+			return {...initialState, "cardList":_addCardNumber(state.cardList) };
 
 		case 'DECREMENT' :
-			return {"cardList":_removeLastIndex(state.cardList) };
+			return {...initialState, "cardList":_removeLastIndex(state.cardList) };
 
 		case 'REMOVECARDINSTORAGE' :
-			return {"cardList":_removeIndex(state.cardList, action.number) };
+			return {...initialState, "cardList":_removeIndex(state.cardList, action.number) };
 
 		default :
 			return state
