@@ -1,13 +1,13 @@
 import React, {PropTypes} from 'react'
-import { withRouter } from 'react-router'
+import { withRouter } from 'react-router-dom'
 import './SaveCard.css'
 
 const SaveCard = withRouter((props) => {
 
-    const { router, onRemoveCardInStorage, onSaveMyCard, savecardlist} = props;
+    const { history, onRemoveCardInStorage, onSaveMyCard, savecardlist} = props;
 
     const goHome = () => {
-      router.push('/');
+      history.push('/');
     }
 
     const drop_handler = (evt) => {

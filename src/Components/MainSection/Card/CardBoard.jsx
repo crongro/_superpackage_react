@@ -24,7 +24,7 @@ class CardBoard extends Component {
 	componentWillReceiveProps(nextProps) {
 		if(nextProps.CardList.errMsg !== null) {
 			//선택1. 특별한 URL로 보낼 수도 있음. 이때 query에 에러내용을 담아서 보낼 수 있다.
-			this.props.router.push({
+			this.props.history.push({
 				pathname: "/__err",
 				query: {errMsg: nextProps.CardList.errMsg}
 			});

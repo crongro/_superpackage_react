@@ -55,6 +55,7 @@ function _dispatchForgetFetchData(dispatch, value) {
 	dispatch(getFetchData(value))
 }
 
+//ajax를 root component에서 해서 결과받 action을 호출할수는 없을까?
 export const sendFetchData = (dispatch) => {
 
 	return (dispatch) => {
@@ -79,6 +80,7 @@ function checkValidToken() {
 
 export const validToken = (dispatch) => {
 
+	//thunk를 사용해서 action이 {}를 반환하는게 아니라 함수를 반환할 수 있게 됐다.
 	return (dispatch) => {
 			    return checkValidToken()
 			    .then((response) => {

@@ -1,16 +1,17 @@
 import React from 'react'
-import { IndexLink } from 'react-router' 
-import NavLink from './NavLink'
 import '../App.css'
+import {NavLink} from 'react-router-dom'
 
-const MainNavi = () => (
+const MainNavi = () => {
+	return(
 	<div className="naviWrap">
 	  <ul>
-	    <li><IndexLink to="/" activeClassName="active">Home</IndexLink></li>
-	    <li><NavLink to="/card">CARD</NavLink></li>
-	    <li><NavLink to="/about">ABOUT</NavLink></li>
+	    <li><NavLink activeClassName="active" exact to="/">Home</NavLink></li>
+	    <li><NavLink activeClassName="active" to="/card" >CARD</NavLink></li>
+	    <li><NavLink activeStyle={{color:'magenta'}} to="/about">ABOUT</NavLink></li>
 	  </ul>
 	</div>	
-)
+	)
+}
 
 export default MainNavi;

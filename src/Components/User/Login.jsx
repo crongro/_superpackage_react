@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './Login.css'
+import {Redirect} from 'react-router-dom'
 
 
 class Login extends Component {
@@ -10,11 +11,23 @@ class Login extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		if(nextProps.Login.status === "authenticated") {
-			console.log("auth is ok");
-			this.props.router.push("/")
-		}
+		// if(nextProps.Login.status === "authenticated") {
+		// 	console.log("auth is ok");
+		// 	this.props.history.push("/")
+		// }
 	}
+
+	/*
+	shouldComponentUpdate(nextProps, nextState) {
+		console.log("shouldComponUpdate loaded");
+		if(nextProps.Login.status !== "authenticated") {
+			console.log("shouldComponUpdate auth is ok");
+			return true;
+		}
+		return false;
+		//this.props.history.push("/")
+	}
+	*/
 
 	render() {
 		const handleChange = (evt) => {
@@ -25,6 +38,16 @@ class Login extends Component {
 			evt.preventDefault();
 			this.props.onLogin(this.state.inputemail);
 		}
+
+		const bAuth = (this.props.Login.status === "authenticated");
+
+		const {from} = this.props.location.state;
+
+		if (bAuth) {
+      return (
+        <Redirect to={from} />
+      )
+    }
 
 		return (
 			<div className="loginWrap">

@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import './ShowCard.css'
-import { withRouter } from 'react-router'
+import { withRouter } from 'react-router-dom'
 
 const ShowCard = withRouter((props) => {
 
