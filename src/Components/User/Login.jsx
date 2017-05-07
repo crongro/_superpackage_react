@@ -17,19 +17,18 @@ class Login extends Component {
 		// }
 	}
 
-	/*
-	shouldComponentUpdate(nextProps, nextState) {
-		console.log("shouldComponUpdate loaded");
-		if(nextProps.Login.status !== "authenticated") {
-			console.log("shouldComponUpdate auth is ok");
-			return true;
-		}
-		return false;
-		//this.props.history.push("/")
-	}
-	*/
+	// shouldComponentUpdate(nextProps, nextState) {
+	// 	if(nextProps.Login.status !== "authenticated") {
+	// 		console.log('shouldComponentUpdate true');
+	// 		return true;
+	// 	}
+	// 	console.log('shouldComponentUpdate false');
+	// 	return false;
+	// 	//
+	// }
 
 	render() {
+		console.log('login render');
 		const handleChange = (evt) => {
 			this.setState({ inputemail : evt.target.value });
 		}
@@ -41,7 +40,8 @@ class Login extends Component {
 
 		const bAuth = (this.props.Login.status === "authenticated");
 
-		const {from} = this.props.location.state;
+		let from = this.props.location && this.props.location.state && this.props.location.state.from;
+		if (!from || from.pathname === "/login") from  = "/";
 
 		if (bAuth) {
       return (

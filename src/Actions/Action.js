@@ -45,6 +45,14 @@ export const sendLogin = (email) => {
 	}
 }
 
+export const checkingToken = () => ({
+	type : 'CHECKING_TOKEN'
+})
+
+export const needToken = () => ({
+	type : 'NEED_TOKEN'
+})
+
 
 function fetchData() {
   //return fetch('https://api.github.com/users/facebook')
@@ -79,6 +87,8 @@ function checkValidToken() {
 }
 
 export const validToken = (dispatch) => {
+
+	dispatch(checkingToken());
 
 	//thunk를 사용해서 action이 {}를 반환하는게 아니라 함수를 반환할 수 있게 됐다.
 	return (dispatch) => {

@@ -8,6 +8,12 @@ let Login = (state=initialState, action) => {
 		case 'LOGINSUCCESS' :
 			return {status : "authenticated"};
 
+		case 'CHECKING_TOKEN' :
+			return {status : "checking"}
+
+		case 'NEED_TOKEN' :
+			return {status : "needtoken"}
+
 		default :
 			return state
 	}
