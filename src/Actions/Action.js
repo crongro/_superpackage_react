@@ -55,8 +55,8 @@ export const needToken = () => ({
 
 
 function fetchData() {
-  //return fetch('https://api.github.com/users/facebook')
-  return fetch('http://localhost:3000/_data/fetch.json')
+  return fetch('https://api.github.com/users/facebook')
+  //return fetch('http://localhost:3000/_data/fetch.json')
 }
 
 function _dispatchForgetFetchData(dispatch, value) {
@@ -65,7 +65,6 @@ function _dispatchForgetFetchData(dispatch, value) {
 
 //ajax를 root component에서 해서 결과받 action을 호출할수는 없을까?
 export const sendFetchData = (dispatch) => {
-
 	return (dispatch) => {
 			    return fetchData()
 			    .then((response) => {
